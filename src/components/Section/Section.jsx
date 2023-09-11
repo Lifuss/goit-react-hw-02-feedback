@@ -1,6 +1,7 @@
 import { FeedbackRequest } from 'components/FeedbackRequest/FeedbackRequest';
 import { FeedbackStats } from 'components/FeedbackStats/FeedbackStats';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Section = ({
   title,
@@ -26,4 +27,15 @@ const Section = ({
     </section>
   );
 };
+
+Section.propTypes = {
+  HandleButton: PropTypes.func,
+  title: PropTypes.string,
+  good: PropTypes.number,
+  bad: PropTypes.number,
+  neutral: PropTypes.number,
+  positivePercentage: PropTypes.number,
+  total: PropTypes.number,
+};
+
 export default Section;

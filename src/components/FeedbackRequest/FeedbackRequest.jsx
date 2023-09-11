@@ -1,4 +1,5 @@
 import { StyledBoxBtn, StyledBtn } from './FeedbackRequest.styled';
+import PropTypes from 'prop-types';
 
 export const FeedbackRequest = ({ HandleButton }) => {
   return (
@@ -14,4 +15,8 @@ export const FeedbackRequest = ({ HandleButton }) => {
       </StyledBtn>
     </StyledBoxBtn>
   );
+};
+
+FeedbackRequest.propTypes = {
+  HandleButton: PropTypes.func,
 };

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Section from './Section/Section';
-// import { toast } from 'react-toastify';
 import {
   countPositiveFeedbackPercentage,
   countTotalFeedback,
@@ -15,7 +14,6 @@ export class App extends Component {
 
   HandleButton = e => {
     const { value } = e.target;
-    // toast.success('Congratulation');
     this.setState(prev => ({ [value]: prev[value] + 1 }));
   };
 
