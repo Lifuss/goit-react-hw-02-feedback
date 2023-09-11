@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Section from './Section/Section';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import {
   countPositiveFeedbackPercentage,
   countTotalFeedback,
