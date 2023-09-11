@@ -1,16 +1,17 @@
+import { StyledBoxBtn, StyledBtn } from './FeedbackRequest.styled';
+
 export const FeedbackRequest = ({ HandleButton }) => {
   return (
-    <div>
-      <h2>title</h2>
-      <button onClick={HandleButton} value="good">
+    <StyledBoxBtn>
+      <StyledBtn onClick={HandleButton} value="good">
         Good
-      </button>
-      <button onClick={HandleButton} value="neutral">
+      </StyledBtn>
+      <StyledBtn onClick={HandleButton} value="neutral">
         Neutral
-      </button>
-      <button onClick={HandleButton} value="bad">
+      </StyledBtn>
+      <StyledBtn onClick={HandleButton} value="bad">
         Bad
-      </button>
-    </div>
+      </StyledBtn>
+    </StyledBoxBtn>
   );
 };
