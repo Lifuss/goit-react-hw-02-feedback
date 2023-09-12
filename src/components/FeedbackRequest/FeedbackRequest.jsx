@@ -1,22 +1,19 @@
 import { StyledBoxBtn, StyledBtn } from './FeedbackRequest.styled';
 import PropTypes from 'prop-types';
 
-export const FeedbackRequest = ({ HandleButton }) => {
+export const FeedbackRequest = ({ handleButton, options }) => {
   return (
     <StyledBoxBtn>
-      <StyledBtn onClick={HandleButton} value="good">
-        Good
-      </StyledBtn>
-      <StyledBtn onClick={HandleButton} value="neutral">
-        Neutral
-      </StyledBtn>
-      <StyledBtn onClick={HandleButton} value="bad">
-        Bad
-      </StyledBtn>
+      {options.map(el => (
+        <StyledBtn key={el} onClick={handleButton} value={el}>
+          {el}
+        </StyledBtn>
+      ))}
     </StyledBoxBtn>
   );
 };
 
 FeedbackRequest.propTypes = {
   HandleButton: PropTypes.func,
+  options: PropTypes.arrayOf(PropTypes.string),
 };

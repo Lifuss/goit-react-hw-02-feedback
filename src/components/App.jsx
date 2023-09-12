@@ -3,7 +3,9 @@ import Section from './Section/Section';
 import {
   countPositiveFeedbackPercentage,
   countTotalFeedback,
-} from './Helpers/countFeedback';
+} from '../Helpers/countFeedback';
+import { FeedbackRequest } from './FeedbackRequest/FeedbackRequest';
+import { FeedbackStats } from './FeedbackStats/FeedbackStats';
 
 export class App extends Component {
   state = {
@@ -12,7 +14,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  HandleButton = e => {
+  handleButton = e => {
     const { value } = e.target;
     this.setState(prev => ({ [value]: prev[value] + 1 }));
   };
@@ -23,15 +25,20 @@ export class App extends Component {
     const positivePercentage = countPositiveFeedbackPercentage(good, total);
 
     return (
-      <Section
-        title="Please leave feedback"
-        good={good}
-        bad={bad}
-        neutral={neutral}
-        total={total}
-        positivePercentage={positivePercentage}
-        HandleButton={this.HandleButton}
-      ></Section>
+      <Section title="Please leave feedback">
+        <FeedbackRequest
+          options={Object.keys(this.state)}
+          handleButton={this.handleButton}
+        />
+        <FeedbackStats
+          title="Statistics"
+          good={good}
+          bad={bad}
+          neutral={neutral}
+          total={total}
+          positivePercentage={positivePercentage}
+        />
+      </Section>
     );
   }
 }

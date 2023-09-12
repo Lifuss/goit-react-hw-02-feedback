@@ -8,17 +8,23 @@ export const FeedbackStats = ({
   neutral,
   positivePercentage,
   total,
+  title,
 }) => {
-  return total ? (
-    <StyledTextBox>
-      <StyledText>Good: {good}</StyledText>
-      <StyledText>Neutral: {neutral}</StyledText>
-      <StyledText>Bad: {bad}</StyledText>
-      <StyledText>Total: {total}</StyledText>
-      <StyledText>Positive feedback: {positivePercentage}%</StyledText>
-    </StyledTextBox>
-  ) : (
-    <Notification message="There is no feedback" />
+  return (
+    <>
+      <h2>{title}</h2>
+      {total ? (
+        <StyledTextBox>
+          <StyledText>Good: {good}</StyledText>
+          <StyledText>Neutral: {neutral}</StyledText>
+          <StyledText>Bad: {bad}</StyledText>
+          <StyledText>Total: {total}</StyledText>
+          <StyledText>Positive feedback: {positivePercentage}%</StyledText>
+        </StyledTextBox>
+      ) : (
+        <Notification message="There is no feedback" />
+      )}
+    </>
   );
 };
 
@@ -28,4 +34,5 @@ FeedbackStats.propTypes = {
   neutral: PropTypes.number,
   positivePercentage: PropTypes.number,
   total: PropTypes.number,
+  title: PropTypes.string,
 };

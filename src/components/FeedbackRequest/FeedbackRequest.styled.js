@@ -5,6 +5,8 @@ export const StyledBtn = styled.button`
   background-color: white;
   border-radius: 4px;
   padding: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
 `;
 
 export const StyledBoxBtn = styled.div`
